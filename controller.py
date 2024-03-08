@@ -1,12 +1,15 @@
 from model import Categoria
 from dal import CategoriaDal
 from globalSettings import text_formatter
+from globalSettings import checking_duplicity
 
 class CategoriaControler:
     @classmethod
     def register(cls, name:str, description:str=None):
-        if isinstance(name, str) and (isinstance(description, str) or description == None):
-            categoria = Categoria(text_formatter(name) , text_formatter(description))
+        name = text_formatter(name)
+        description = text_formatter(description)
+        if isinstance(name, str) and (isinstance(description, str) or description == None) and not checking_duplicity(name, description):
+            categoria = Categoria(name, description)
             try:
                 CategoriaDal.write(categoria)
                 return True
