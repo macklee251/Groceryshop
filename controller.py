@@ -16,4 +16,3 @@ class CategoriaController:
             except:
                 return False        
             
-CategoriaController().register('limpea')
