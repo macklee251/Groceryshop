@@ -3,7 +3,7 @@ from dal import CategoriaDal
 from globalSettings import text_formatter
 from globalSettings import checking_duplicity
 
-class CategoriaControler:
+class CategoriaController:
     @classmethod
     def register(cls, name:str, description:str=None):
         name = text_formatter(name)
@@ -14,8 +14,6 @@ class CategoriaControler:
                 CategoriaDal.write(categoria)
                 return True
             except:
-                return False
+                return False        
             
-            
-CategoriaControler().register('limpesa', 'limpesa    de  casa')
-        
+CategoriaController().register('limpea')

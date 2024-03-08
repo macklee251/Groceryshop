@@ -8,9 +8,9 @@ class CategoriaDal:
             
     @classmethod
     def read(cls):
-        categoria = []
+        category = []
         with open('categorias.txt', 'r') as file:
-            for linha in file:
-                name, description = linha.strip().split(',')
-                categoria.append(Categoria(name, description))
-        return categoria
+            for row in file:
+                name, description = row.strip().split(',')
+                category.append(Categoria(name, description))
+        return category
