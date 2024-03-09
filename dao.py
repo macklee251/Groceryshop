@@ -10,4 +10,4 @@ class daoCategoria():
             file.write('\n')
             
             
-daoCategoria().salvar('venda', Venda(Produto('Arroz', Categoria('Alimento', 'Grão'), 5), 'João', 'Maria', 5))
+daoCategoria().salvar('venda', Venda('Arroz', 'João', 'Maria', 5))
