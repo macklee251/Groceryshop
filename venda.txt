@@ -1,0 +1,5 @@
+produto: Nome: Arroz - Categoria: Nome: Alimento - Descrição: None - Preço: 10,vendedor: João,comprador: Maria,quantidade: 5,date: <built-in method now of type object at 0x101248980>,
+produto: Nome: Arroz - Categoria: Nome: Alimento - Descrição: None - Preço: 10,vendedor: João,comprador: Maria,quantidade: 5,date: 2024-03-09 11:09:13.263683,
+produto: Arroz,vendedor: 10,comprador: João,quantidade: Maria,date: 5,
+produto: Arroz,vendedor: João,comprador: Maria,quantidade: 5,date: 2024-03-09 11:13:58.322007,
+produto: Nome: Arroz - Categoria: Nome: Alimento - Descrição: Grão - Preço: 5,vendedor: João,comprador: Maria,quantidade: 5,date: 2024-03-09 11:15:12.196826,

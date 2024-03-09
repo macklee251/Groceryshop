@@ -1,3 +1,4 @@
+from datetime import datetime, date
 class Categoria:
     def __init__(self, nome:str, descricao:str=None) -> None:
         self.nome = nome 
@@ -24,6 +25,35 @@ class Estoque:
         return f'Produto: {self.produto} - Quantidade: {self.quantidade}'
     
     
-sabonete = Estoque(Produto('Sabonete', Categoria('Higiene', 'produto de higiene pessoal'), 2.50), 100)
+class Venda:
+    def __init__(self, produto:Produto, vendedor, comprador, quantidade:int, date=datetime.now()) -> None:
+        self.produto = produto
+        self.vendedor = vendedor
+        self.comprador = comprador
+        self.quantidade = quantidade
+        self.date = date
+    
+    def __str__(self) -> str:
+        return f'Produto: {self.produto} - Vendedor: {self.vendedor} - Comprador: {self.comprador} - Quantidade: {self.quantidade} - Data: {self.date}'
+        
+class Fornecedor:
+    def __init__(self, nome, cnpj, telefone, categoria: Categoria) -> None:
+        self.nome = nome
+        self.cnpj = cnpj
+        self.telefone = telefone
+        self.categoria = categoria
+        
+class Pessoa:
+    def __init__(self, nome, telefone, cpf, email, endereco) -> None:
+        self.nome = nome
+        self.telefone = telefone
+        self.cpf = cpf
+        self.email = email
+        self.endereco = endereco
 
-print(sabonete)
+class Funcionario(Pessoa):
+    def __init__(self, nome, clt, telefone, cpf, email, endereco) -> None:
+        self.clt = clt
+        super().__init__(nome, telefone, cpf, email, endereco)
+        
+        
