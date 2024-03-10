@@ -12,7 +12,9 @@ class DaoCategoria:
         categorias = []
         with open('categorias.txt', 'r') as file:
             for line in file:
-                nome, descricao = line.strip().split(',')
+                data = line.strip().split(',', 1)
+                nome = data[0]
+                descricao = data[1] if len(data) > 1 else ""
                 categorias.append(Categoria(nome, descricao))
         return categorias
     

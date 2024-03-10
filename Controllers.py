@@ -5,9 +5,11 @@ class ControllerCategoria():
     @classmethod
     def cadastrar(cls, nome:str, descricao:str=None):
         if nome:
-            print("ok")
-        else:
-            print('Nome inválido')
+            try:
+                categoria = Categoria(nome, descricao)
+                DaoCategoria.salvar(categoria)
+                return True
+            except:
+                return False
             
-            
-ControllerCategoria().cadastrar('Bebidas')
+ControllerCategoria.cadastrar('Bebidas', 'Refrigerantes, sucos, água')
