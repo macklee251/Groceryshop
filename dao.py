@@ -1,5 +1,6 @@
 # Data as object
 from Models import *
+import re
 
 class DaoCategoria:
     @classmethod
@@ -12,11 +13,35 @@ class DaoCategoria:
         categorias = []
         with open('categorias.txt', 'r') as file:
             for line in file:
-                nome = line.strip().split('Nome: ')[1].split(', Descrição:')[0]
-                descricao = line.strip().split('Descrição: ')[1]
-                categorias.append(Categoria(nome, descricao))
+                match = re.search(r'Nome: (.*), Descrição: (.*)', line)
+                if match:
+                    nome = match.group(1)
+                    descricao = match.group(2)
+                    categorias.append(Categoria(nome, descricao))
         return categorias
 
+
+class DaoVenda:
+    @classmethod
+    def salvar(cls, venda:Venda):
+        with open('vendas.txt', 'a') as file:
+            file.write(f'Produto: {venda.produto}, Vendedor: {venda.vendedor}, Comprador: {venda.comprador}, Quantidade: {venda.quantidade}, Data: {venda.date}\n')
+            
+    @classmethod
+    def ler(cls):
+        vendas = []
+        with open('vendas.txt', 'r') as file:
+            for line in file:
+                match = re.search(r'Produto: (.*), Vendedor: (.*), Comprador: (.*), Quantidade: (.*), Data: (.*)', line)
+                if match:
+                    produto = match.group(1)
+                    vendedor = match.group(2)
+                    comprador = match.group(3)
+                    quantidade = match.group(4)
+                    date = match.group(5)
+                    vendas.append(Venda(produto, vendedor, comprador, quantidade, date))
+        return vendas
+    
     
 if __name__=="__main__":
-    print(DaoCategoria().ler()[0].nome)
+    print(DaoVenda().ler()[0])

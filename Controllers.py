@@ -13,4 +13,4 @@ class ControllerCategoria():
                 return False
             
 if __name__ == "__main__":
-    ControllerCategoria.cadastrar('Bebidas', 'Refrigerantes, sucos, água')
+    ControllerCategoria.cadastrar('Bebidas')

@@ -1,0 +1,1 @@
+Produto: Coca-cola, Vendedor: João, Comprador: Maria, Quantidade: 2, Data: 2024-03-10 14:30:00.855841
