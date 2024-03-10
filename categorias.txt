@@ -1,1 +1,1 @@
-Bebidas,Refrigerantes, sucos, água
+Nome: Bebidas gelada, Descrição: Refrigerantes, sucos, água

@@ -12,4 +12,5 @@ class ControllerCategoria():
             except:
                 return False
             
-ControllerCategoria.cadastrar('Bebidas', 'Refrigerantes, sucos, água')
+if __name__ == "__main__":
+    ControllerCategoria.cadastrar('Bebidas', 'Refrigerantes, sucos, água')
