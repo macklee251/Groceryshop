@@ -1,13 +1,21 @@
 # Data as object
-from model import *
+from Models import *
 
-class daoCategoria():
+class DaoCategoria:
     @classmethod
-    def salvar(cls, file_name, obj):
-        with open(f'{file_name}.txt', 'a') as file:
-            for attr, value in obj.__dict__.items():
-                file.write(f'{attr}: {value},')
-            file.write('\n')
+    def salvar(cls, categoria:Categoria):
+        with open('categorias.txt', 'a') as file:
+            file.write(f'{categoria.nome},{categoria.descricao}\n')
             
-            
-daoCategoria().salvar('venda', Venda('Arroz', 'João', 'Maria', 5))
+    @classmethod
+    def ler(cls):
+        categorias = []
+        with open('categorias.txt', 'r') as file:
+            for line in file:
+                nome, descricao = line.strip().split(',')
+                categorias.append(Categoria(nome, descricao))
+        return categorias
+    
+    
+if __name__=="__main__":
+    print(DaoCategoria.ler())

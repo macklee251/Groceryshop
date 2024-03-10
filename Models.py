@@ -63,5 +63,3 @@ class Funcionario(Pessoa):
         
     def __str__(self) -> str:
         return f'Nome: {self.nome} - CLT: {self.clt} - Telefone: {self.telefone} - CPF: {self.cpf} - Email: {self.email} - Endereço: {self.endereco}'
-        
-

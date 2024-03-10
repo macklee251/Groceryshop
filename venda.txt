@@ -1,4 +1,0 @@
-produto: Nome: Arroz - Categoria: Nome: Alimento - Descrição: Grão - Preço: 5,vendedor: João,comprador: Maria,quantidade: 5,date: 2024-03-09 16:41:30.012269,
-produto: Nome: Arroz - Categoria: Nome: Alimento - Descrição: Grão - Preço: 5,vendedor: João,comprador: Maria,quantidade: 5,date: 2024-03-09 16:53:29.238866,
-produto: Nome: Arroz - Categoria: Nome: Alimento - Descrição: Grão - Preço: 5,vendedor: João,comprador: Maria,quantidade: 5,date: 2024-03-09 16:53:34.299971,
-produto: Arroz,vendedor: João,comprador: Maria,quantidade: 5,date: 2024-03-09 16:56:31.497942,
