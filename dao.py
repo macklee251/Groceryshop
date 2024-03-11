@@ -19,7 +19,43 @@ class DaoCategoria:
                     descricao = match.group(2)
                     categorias.append(Categoria(nome, descricao))
         return categorias
-
+    
+class DaoProduto:
+    @classmethod
+    def salvar(cls, produto:Produto):
+        with open('produtos.txt', 'a') as file:
+            file.write(f'Nome: {produto.nome}, Categoria: {produto.categoria}, Preço: {produto.preco}\n')
+            
+    @classmethod
+    def ler(cls):
+        produtos = []
+        with open('produtos.txt', 'r') as file:
+            for line in file:
+                match = re.search(r'Nome: (.*), Categoria: (.*), Preço: (.*)', line)
+                if match:
+                    nome = match.group(1)
+                    categoria = match.group(2)
+                    preco = match.group(3)
+                    produtos.append(Produto(nome, categoria, preco))
+        return produtos
+        
+class DaoEstoque:
+    @classmethod
+    def salvar(cls, estoque:Estoque):
+        with open('estoque.txt', 'a') as file:
+            file.write(f'Produto: {estoque.produto}, Quantidade: {estoque.quantidade}\n')
+        
+    @classmethod
+    def ler(cls):
+        estoques = []
+        with open('estoque.txt', 'r') as file:
+            for line in file:
+                match = re.search(r'Produto: (.*), Quantidade: (.*)', line)
+                if match:
+                    produto = match.group(1)
+                    quantidade = match.group(2)
+                    estoques.append(Estoque(produto, quantidade))
+        return estoques
 
 class DaoVenda:
     @classmethod
@@ -42,6 +78,69 @@ class DaoVenda:
                     vendas.append(Venda(produto, vendedor, comprador, quantidade, date))
         return vendas
     
+class DaoFornecedor:
+    @classmethod
+    def salvar(cls, fornecedor:Fornecedor):
+        with open('fornecedores.txt', 'a') as file:
+            file.write(f'Nome: {fornecedor.nome}, CNPJ: {fornecedor.cnpj}, Telefone: {fornecedor.telefone}, Categoria: {fornecedor.categoria}\n')
+            
+    @classmethod
+    def ler(cls):
+        fornecedores = []
+        with open('fornecedores.txt', 'r') as file:
+            for line in file:
+                match = re.search(r'Nome: (.*), CNPJ: (.*), Telefone: (.*), Categoria: (.*)', line)
+                if match:
+                    nome = match.group(1)
+                    cnpj = match.group(2)
+                    telefone = match.group(3)
+                    categoria = match.group(4)
+                    fornecedores.append(Fornecedor(nome, cnpj, telefone, categoria))
+        return fornecedores
+    
+class DaoPessoa:
+    @classmethod
+    def salvar(cls, pessoa:Pessoa):
+        with open('pessoas.txt', 'a') as file:
+            file.write(f'Nome: {pessoa.nome}, Telefone: {pessoa.telefone}, CPF: {pessoa.cpf}, Email: {pessoa.email}, Endereço: {pessoa.endereco}\n')
+            
+    @classmethod
+    def ler(cls):
+        pessoas = []
+        with open('pessoas.txt', 'r') as file:
+            for line in file:
+                match = re.search(r'Nome: (.*), Telefone: (.*), CPF: (.*), Email: (.*), Endereço: (.*)', line)
+                if match:
+                    nome = match.group(1)
+                    telefone = match.group(2)
+                    cpf = match.group(3)
+                    email = match.group(4)
+                    endereco = match.group(5)
+                    pessoas.append(Pessoa(nome, telefone, cpf, email, endereco))
+        return pessoas
+    
+class DaoFunionario:
+    @classmethod
+    def salvar(cls, funcionario:Funcionario):
+        with open('funcionarios.txt', 'a') as file:
+            file.write(f'Nome: {funcionario.nome}, CLT: {funcionario.clt}, Telefone: {funcionario.telefone}, CPF: {funcionario.cpf}, Email: {funcionario.email}, Endereço: {funcionario.endereco}\n')
+            
+    @classmethod
+    def ler(cls):
+        funcionarios = []
+        with open('funcionarios.txt', 'r') as file:
+            for line in file:
+                match = re.search(r'Nome: (.*), CLT: (.*), Telefone: (.*), CPF: (.*), Email: (.*), Endereço: (.*)', line)
+                if match:
+                    nome = match.group(1)
+                    clt = match.group(2)
+                    telefone = match.group(3)
+                    cpf = match.group(4)
+                    email = match.group(5)
+                    endereco = match.group(6)
+                    funcionarios.append(Funcionario(nome, clt, telefone, cpf, email, endereco))
+        return funcionarios
     
 if __name__=="__main__":
-    print(DaoVenda().ler()[0])
+    for i in DaoCategoria.ler():
+        print(i.nome)

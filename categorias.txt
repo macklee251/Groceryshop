@@ -1,2 +1,0 @@
-Nome: Bebidas, Descrição: Refrigerantes, sucos, água
-Nome: Bebidas, Descrição: None
