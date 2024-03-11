@@ -1,0 +1,2 @@
+Nome: Fornecedor, CNPJ: 123456789, Telefone: 123456789, Categoria: Alimento
+Nome: Fornecedor, CNPJ: 123456789, Telefone: 123456789, Categoria: Alimento

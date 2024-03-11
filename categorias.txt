@@ -1,0 +1,3 @@
+Nome: Alimento, Descrição: Comida
+Nome: Alimento, Descrição: Comida
+Nome: Frutas, Descrição: Frutas frescas

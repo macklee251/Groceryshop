@@ -4,12 +4,12 @@ import re
 
 class DaoCategoria:
     @classmethod
-    def salvar(cls, categoria:Categoria):
+    def salvarCategoria(cls, categoria:Categoria):
         with open('categorias.txt', 'a') as file:
             file.write(f'Nome: {categoria.nome}, Descrição: {categoria.descricao}\n')
             
     @classmethod
-    def ler(cls):
+    def lerCategoria(cls):
         categorias = []
         with open('categorias.txt', 'r') as file:
             for line in file:
@@ -22,12 +22,12 @@ class DaoCategoria:
     
 class DaoProduto:
     @classmethod
-    def salvar(cls, produto:Produto):
+    def salvarProduto(cls, produto:Produto):
         with open('produtos.txt', 'a') as file:
             file.write(f'Nome: {produto.nome}, Categoria: {produto.categoria}, Preço: {produto.preco}\n')
             
     @classmethod
-    def ler(cls):
+    def lerProduto(cls):
         produtos = []
         with open('produtos.txt', 'r') as file:
             for line in file:
@@ -41,12 +41,12 @@ class DaoProduto:
         
 class DaoEstoque:
     @classmethod
-    def salvar(cls, estoque:Estoque):
+    def salvarEstoque(cls, estoque:Estoque):
         with open('estoque.txt', 'a') as file:
             file.write(f'Produto: {estoque.produto}, Quantidade: {estoque.quantidade}\n')
         
     @classmethod
-    def ler(cls):
+    def lerEstoque(cls):
         estoques = []
         with open('estoque.txt', 'r') as file:
             for line in file:
@@ -59,12 +59,12 @@ class DaoEstoque:
 
 class DaoVenda:
     @classmethod
-    def salvar(cls, venda:Venda):
+    def salvarVenda(cls, venda:Venda):
         with open('vendas.txt', 'a') as file:
             file.write(f'Produto: {venda.produto}, Vendedor: {venda.vendedor}, Comprador: {venda.comprador}, Quantidade: {venda.quantidade}, Data: {venda.date}\n')
             
     @classmethod
-    def ler(cls):
+    def lerVenda(cls):
         vendas = []
         with open('vendas.txt', 'r') as file:
             for line in file:
@@ -80,12 +80,12 @@ class DaoVenda:
     
 class DaoFornecedor:
     @classmethod
-    def salvar(cls, fornecedor:Fornecedor):
+    def salvarFornecedor(cls, fornecedor:Fornecedor):
         with open('fornecedores.txt', 'a') as file:
             file.write(f'Nome: {fornecedor.nome}, CNPJ: {fornecedor.cnpj}, Telefone: {fornecedor.telefone}, Categoria: {fornecedor.categoria}\n')
             
     @classmethod
-    def ler(cls):
+    def lerFornecedor(cls):
         fornecedores = []
         with open('fornecedores.txt', 'r') as file:
             for line in file:
@@ -100,12 +100,12 @@ class DaoFornecedor:
     
 class DaoPessoa:
     @classmethod
-    def salvar(cls, pessoa:Pessoa):
+    def salvarPessoa(cls, pessoa:Pessoa):
         with open('pessoas.txt', 'a') as file:
             file.write(f'Nome: {pessoa.nome}, Telefone: {pessoa.telefone}, CPF: {pessoa.cpf}, Email: {pessoa.email}, Endereço: {pessoa.endereco}\n')
             
     @classmethod
-    def ler(cls):
+    def lerPessoa(cls):
         pessoas = []
         with open('pessoas.txt', 'r') as file:
             for line in file:
@@ -121,12 +121,12 @@ class DaoPessoa:
     
 class DaoFunionario:
     @classmethod
-    def salvar(cls, funcionario:Funcionario):
+    def salvarFuncionario(cls, funcionario:Funcionario):
         with open('funcionarios.txt', 'a') as file:
             file.write(f'Nome: {funcionario.nome}, CLT: {funcionario.clt}, Telefone: {funcionario.telefone}, CPF: {funcionario.cpf}, Email: {funcionario.email}, Endereço: {funcionario.endereco}\n')
             
     @classmethod
-    def ler(cls):
+    def lerFuncionario(cls):
         funcionarios = []
         with open('funcionarios.txt', 'r') as file:
             for line in file:
@@ -142,5 +142,4 @@ class DaoFunionario:
         return funcionarios
     
 if __name__=="__main__":
-    for i in DaoCategoria.ler():
-        print(i.nome)
+    DaoProduto().salvarProduto('Arroz', 'Alimento', '5.00')

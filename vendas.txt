@@ -1,3 +1,5 @@
 Produto: Coca-cola, Vendedor: João, Comprador: Maria, Quantidade: 2, Data: 2024-03-10 14:30:00.855841
 Produto: Coca-cola, Vendedor: João, Comprador: Maria, Quantidade: 2, Data: 10
 Produto: Coca-cola, Vendedor: João, Comprador: Maria, Quantidade: 2, Data: 2011
+Produto: Arroz, Vendedor: João, Comprador: Maria, Quantidade: 1, Data: 2024-03-11 08:02:21.549123
+Produto: Arroz, Vendedor: João, Comprador: Maria, Quantidade: 1, Data: 2024-03-11 08:13:13.138404
